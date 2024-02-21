@@ -10,4 +10,4 @@ This repulsitory contains different ways of solving problems with data structure
 I coded this while I am pursuing a certain certificate for data structure, I guess it may help someone out there in the world!
 
 ## Final
-The harder you practice, the luckier you become!
+You know you are starting to become pro, when your code runs on first run🚀
