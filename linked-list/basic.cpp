@@ -1,39 +1,44 @@
-#include <iostream>
+#include<iostream>
+using namespace std;
 
-class node{
-    public:
-        int value;
-        node* addr;
+struct Node{
+	int n;
+	Node* a;
 };
 
-void show(node* head){
-    while(head != NULL){
-        std::cout<<"The value stored is : "<<head->value<<std::endl;
-        //if(head->addr != NULL ){
-            head = head->addr;
-        //}else{
-        //    return;
-        //}
-        
-    }
+void addAtEnd(Node*& head, int num){
+	Node* newNode = new Node();
+	newNode->n = num;
+	newNode->a= nullptr;
+
+	if(head==nullptr){
+		head=newNode;
+	}else{
+		Node* temp = head;
+		while(temp->a!=nullptr){
+			temp = temp->a;
+		}
+		temp->a = newNode;
+	}
 }
 
+void display(Node* head){
+	Node* temp = head;
+	while(temp->a!=nullptr){
+		cout<<"The value is: "<<temp->n<<endl;
+		temp = temp->a;
+	}
+}
 
 int main(){
-    node* head = new node();
-    node* second = new node();
-    node* third = new node();
-            
-    head->value = 1;
-    head->addr = second;
+	Node* head = nullptr;
 
-    second->value = 2;
-    head->addr = third;
+	addAtEnd(head,40);
+	addAtEnd(head,30);
+	addAtEnd(head,11);
+	addAtEnd(head,5);
 
-    third-> value = 9;
-    third->addr = NULL;
+	display(head);
 
-    show(head);
-
-    
+	return 0;
 }
